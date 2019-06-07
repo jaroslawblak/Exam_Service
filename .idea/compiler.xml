@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Client" />
-        <module name="Common" />
+        <module name="com.gucwa.project.server" />
+        <module name="com.gucwa.project.examService.common" />
         <module name="Server" />
+        <module name="Common" />
+        <module name="com.gucwa.project.client" />
+        <module name="Client" />
       </profile>
     </annotationProcessing>
   </component>

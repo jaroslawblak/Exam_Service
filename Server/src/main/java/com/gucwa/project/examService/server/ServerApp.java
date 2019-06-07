@@ -13,6 +13,6 @@ public class ServerApp
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-        SpringApplication.run(ServerApp.class);
+        SpringApplication.run(ServerApp.class); // szybka konfiguracja spring boota (uruchomienie)
     }
 }

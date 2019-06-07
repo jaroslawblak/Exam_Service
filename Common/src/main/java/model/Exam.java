@@ -10,6 +10,8 @@ public class Exam{
     private User user;
     private  Set<Question> questions;
     private Double note;
+    private  Map<String, Integer> userAnswers;
+
 
 
     public Exam() {
@@ -19,6 +21,18 @@ public class Exam{
     public Exam(User user) {
         this.user = user;
         this.note = null;
+    }
+
+    public void setNote(Double note) {
+        this.note = note;
+    }
+
+    public Map<String, Integer> getUserAnswers() {
+        return userAnswers;
+    }
+
+    public void setUserAnswers(Map<String, Integer> userAnswers) {
+        this.userAnswers = userAnswers;
     }
 
     public User getUser() {

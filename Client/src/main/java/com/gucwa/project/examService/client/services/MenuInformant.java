@@ -1,5 +1,6 @@
 package com.gucwa.project.examService.client.services;
 
+import config.ExamFactory;
 import model.Exam;
 import model.Question;
 import org.springframework.stereotype.Component;
@@ -34,15 +35,17 @@ public class MenuInformant {
                 ExamService examService = new ExamService(new RestTemplate());
                 Exam exam = examService.getExam();
                 Set<Question> questions = exam.getQuestions();
-                List<Integer> inputAnswers = new ArrayList<>();
+                Map<String, Integer> inputAnswers = new LinkedHashMap<>();
                 for (Question question: questions) {
                     System.out.println(question.getTopic());
-                    for (Map.Entry answer : question.getAvailableAnswers().entrySet()){
+                    for (Map.Entry answer : question.getAvailableAnswers().entrySet()) {
                         System.out.println(answer.getKey() + "-" + answer.getValue());
                     }
-                    inputAnswers.add(new Scanner(System.in).nextInt());
-                    sc.nextLine();
+                    inputAnswers.put(question.getTopic(), new Scanner(System.in).nextInt());// do mapy sie wklada, do listy sie dodaje xdd
                 }
+
+                ExamFactory examFactory = new ExamFactory();
+                examService.veryfyExam(examFactory.generateExamWithAnswers(questions, inputAnswers, null));
                 break;
             case 2:
                 break;
