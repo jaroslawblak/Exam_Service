@@ -3,7 +3,10 @@ package model;
 public class User {
     private String firstName;
     private String lastName;
-    private int groupNumber;
+    private long albumID;
+
+    public User() {
+    }
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
@@ -26,12 +29,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public int getGroupNumber() {
-        return groupNumber;
+    public long getAlbumID() {
+        return albumID;
     }
 
-    public void setGroupNumber(int groupNumber) {
-        this.groupNumber = groupNumber;
+    public void setAlbumID(long albumID) {
+        this.albumID = albumID;
     }
 
     public User firstName(final String firstName) {
@@ -44,8 +47,8 @@ public class User {
         return this;
     }
 
-    public User groupNumber(final int groupNumber) {
-        this.groupNumber = groupNumber;
+    public User albumID(final long albumID) {
+        this.albumID = albumID;
         return this;
     }
 

@@ -5,14 +5,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Map;
 import java.util.Set;
 
-@JsonIgnoreProperties(ignoreUnknown=true)
-public class Exam{
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Exam {
     private User user;
-    private  Set<Question> questions;
+    private Set<Question> questions;
     private Double note;
-    private  Map<String, Integer> userAnswers;
-
-
+    private Map<String, Integer> userAnswers;
 
     public Exam() {
         this.note = 0.0;
@@ -20,7 +18,7 @@ public class Exam{
 
     public Exam(User user) {
         this.user = user;
-        this.note = null;
+        this.note = 0.0;
     }
 
     public void setNote(Double note) {
@@ -47,7 +45,7 @@ public class Exam{
         return questions;
     }
 
-    public void setQuestions( Set<Question> questions) {
+    public void setQuestions(Set<Question> questions) {
         this.questions = questions;
     }
 
@@ -64,7 +62,7 @@ public class Exam{
         return this;
     }
 
-    public Exam questions(final  Set<Question> questions) {
+    public Exam questions(final Set<Question> questions) {
         this.questions = questions;
         return this;
     }
