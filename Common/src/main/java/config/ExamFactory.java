@@ -30,11 +30,11 @@ public class ExamFactory {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(Objects.requireNonNull(new ClassPathResource("questions.csv").getFile())))) {
             StringBuilder stringBuilder = new StringBuilder();
             String line = bufferedReader.readLine();
-
-            while (line != null) {
+            int index = 0;
+            while (line != null && index < questionsAmount) {
                 stringBuilder.append(line);
                 String data[] = stringBuilder.toString().split(";"); // tablica stringow, rozdzielona srednikami
-                for (int i = 1; i < questionsAmount; i++) {
+                for (int i = 1; i < 5; i++) {
                     answers.put(i, data[i]);
                 }
                 questions.add(new Question(data[0],
@@ -44,6 +44,7 @@ public class ExamFactory {
                 stringBuilder.delete(0, stringBuilder.length());
                 answers.clear();
                 line = bufferedReader.readLine();
+                index++;
             }
         } catch (IOException e) {
             e.printStackTrace();
