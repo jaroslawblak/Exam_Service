@@ -17,7 +17,7 @@ public class ExamRanking {
     }
 
 
-    public HashMap<String, Double> getRanking() {
+    public Map<String, Double> getRanking() {
         return ranking;
     }
 
